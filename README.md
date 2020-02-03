@@ -55,7 +55,7 @@ user_id|integer|foreign_key:true|
 
 |Column|Type|Options|
 |------|----|-------|
-｜id|integer|null:false|
+|id|integer|null:false|
 |body|text|null:false|
 |image|string|
 |group_id|integer|null:false foreign_key:true|
