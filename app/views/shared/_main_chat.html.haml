@@ -1,0 +1,31 @@
+.chat-main
+  .chat-main__group-info
+    .chat-main__group-info__left-content
+      .chat-main__group-info__left-content__group-name
+        abc
+      .chat-main__group-info__left-content__member-name
+        member:麦倉
+    .chat-main__group-info__right-content
+      %a(href="http://") EDIT
+  .chat-main__message-list
+    .chat-main__message-list__message-box
+      .chat-main__message-list__message-box__name-data
+        %p1 麦倉
+        %p2 2019
+      .chat-main__message-list__message-box__message-data
+        %p1 メッセージ
+    .chat-main__message-list__message-box
+      .chat-main__message-list__message-box__name-data
+        %p1 麦倉
+        %p2 2019
+      .chat-main__message-list__message-box__message-data
+        %p1 メッセージ
+  .chat-main__message-form
+    .chat-main__message-form__message-box
+      .chat-main__message-form__message-box__message-post
+        %input.chat-main__message-form__message-box__message-post__text{:placeholder => "type a message"}
+        %label.chat-main__message-form__message-box__message-post__icon
+          = icon('fas', 'image')
+          %input{type: "file",class:"chat-main__message-form__message-box__message-post__icon__file"}
+      .chat-main__message-form__message-box__message-send
+        %a(href="http://") SEND
