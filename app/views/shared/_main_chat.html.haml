@@ -21,11 +21,10 @@
       .chat-main__message-list__message-box__message-data
         %p1 メッセージ
   .chat-main__message-form
-    .chat-main__message-form__message-box
-      .chat-main__message-form__message-box__message-post
-        %input.chat-main__message-form__message-box__message-post__text{:placeholder => "type a message"}
-        %label.chat-main__message-form__message-box__message-post__icon
+    = form_for [@group, @message],html:{class:"chat-main__message-form__message-box"} do |f|
+      .chat-main__message-form__message-box
+        = f.text_field :content, class: 'chat-main__message-form__message-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'chat-main__message-form__message-box__icon' do
           = icon('fas', 'image')
-          %input{type: "file",class:"chat-main__message-form__message-box__message-post__icon__file"}
-      .chat-main__message-form__message-box__message-send
-        %a(href="http://") SEND
+          = f.file_field :image, class: 'chat-main__message-form__message-box__icon__file'
+      =f.submit 'Send', class: 'chat-main__message-form__message-box__message-send'

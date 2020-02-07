@@ -68,40 +68,33 @@
     background-color: #d2d2d2;
     padding: 20px 40px;
     &__message-box{
+      width: 100%;
+      position: relative;
       display: flex;
-      &__message-post{
-        position: relative;
+      &__text{
+        height: 50px;
+        padding: 0 40px 0 10px;
         width: 100%;
-        display: flex;
-        justify-content: space-between;
-        &__text{
-          background-color: $white;
-          height: 50px;
-          width: 100%;
-          padding: 0 40px 0 10px;
-          color: #434a54;
-          line-height: 50px;
-        }
-        &__icon{
-          position: absolute;
-          right: 10px;
-          top:17px;
-          &__file{
-            display: none;
-          }
-        }
-      }
-      &__message-send{
+        color: #434a54;
+        border-style: none;
+       }
+      &__icon{
+        position: absolute;
+        right: 10px;
+        top:17px;
+        &__file{
+        display: none;
+       }
+     }
+     &__message-send{
         height: 50px;
         line-height: 50px;
-        margin-left: 10px;
+        margin-left: 25px;
         border: solid 1px $skyblue;
         background-color:  $skyblue;
         padding: 0 20px;
-      }
-      &__message-send a{
-        text-decoration: none;
         color: $white;
+        font-size: 16px;
       }
     }
   }
