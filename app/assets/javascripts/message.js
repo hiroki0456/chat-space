@@ -20,7 +20,7 @@ $(function(){
     })
     
     .always(function(){
-    $('chat-main__message-form__message-box__message-send').prop('disabled', false);
+    $('input[name="commit"]').prop('disabled', false);
     })
 
     .fail(function() {
@@ -39,27 +39,25 @@ $(function(){
       if (messages.length !== 0) {
       var insertHTML = '';
       $.each(messages, function(i, message) {
-        insertHTML += buildHTML(message)
+        insertHTML += buildHTML(message);
       });
         $('.chat-main__message-list').append(insertHTML);
-        $('form')[0].reset();
         $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
         $('input[name="commit"]').prop('disabled', false);
       }
     })
+    .always(function(){
+      $('input[name="commit"]').prop('disabled', false);
+      })
     .fail(function() {
-      alert("メッセージ送信に失敗しました");
+      alert("error");
     })
    };
-   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-    setInterval(reloadMessages, 7000);
-  }
-  });
 
   function buildHTML(message){
     if (message.image) {
       var html = 
-    `<div class = "chat-main__message-list__message-box", "data-message-id= ${message.id}" >
+    `<div class = "chat-main__message-list__message-box" data-message-id= ${message.id}>
        <div class ="chat-main__message-list__message-box__name-data">
          ${message.user_name}
          ${message.created_at}
@@ -71,7 +69,7 @@ $(function(){
      </div>`
     } else {
       var html =
-    `<div class = "chat-main__message-list__message-box", "data-message-id= ${message.id}">
+    `<div class = "chat-main__message-list__message-box" data-message-id= ${message.id}>
        <div class="chat-main__message-list__message-box__name-data">
          ${message.user_name}
          ${message.created_at}
@@ -83,3 +81,7 @@ $(function(){
     }
     return html
   }
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+    setInterval(reloadMessages, 7000);
+  }
+  });
