@@ -43,7 +43,6 @@ $(function(){
       });
         $('.chat-main__message-list').append(insertHTML);
         $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
-        $('input[name="commit"]').prop('disabled', false);
       }
     })
     .always(function(){
